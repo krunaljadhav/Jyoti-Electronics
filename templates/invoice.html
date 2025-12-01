@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Invoice - Work {{ job.id }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    /* Inline fallback */
+    body { font-family: Arial, Helvetica, sans-serif; padding:20px; color:#222; }
+    .invoice { max-width:900px; margin:auto; border:1px solid #e6e6e6; padding:22px; border-radius:6px; background:#fff;}
+    .row { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; }
+    .muted { color:#666; font-size:0.95rem; }
+    table { width:100%; border-collapse: collapse; margin-top:12px; }
+    th,td { padding:10px; border:1px solid #f0f0f0; text-align:left; }
+    .right { text-align:right; }
+    .total { font-weight:700; font-size:1.05rem; }
+    a.btn { display:inline-block; padding:8px 12px; border-radius:6px; border:1px solid #ddd; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="invoice">
+    <div class="row">
+      <div>
+        <h2 style="margin:0">Jyoti Electronics</h2>
+        <div class="muted">Repair Invoice</div>
+        <div style="margin-top:8px" class="muted">G-1 Asopalav complex, Nr.alwanaka, Manjalpur, vadodara - 390011</div>
+        <div style="margin-top:8px" class="muted">Phone Number : 9265145408</div>
+      </div>
+
+      <div style="text-align:right">
+        <div><strong>Invoice:</strong> INV-{{ job.id }}</div>
+        <div class="muted">Generated: {{ generated_at.strftime('%Y-%m-%d %H:%M') }}</div>
+        <div class="muted">Works created: {{ job.created_at.strftime('%Y-%m-%d') }}</div>
+      </div>
+    </div>
+
+    <hr style="margin:18px 0; border:none; border-top:1px solid #eee"/>
+
+    <div class="row">
+      <div style="min-width:220px">
+        <strong>Customer</strong><br/>
+        {{ job.customer.name }}<br/>
+        <span class="muted">{{ job.customer.phone or '' }}</span><br/>
+        <div class="muted">{{ job.customer.address or '' }}</div>
+      </div>
+
+      <div style="min-width:220px; text-align:right">
+        <strong>Job</strong><br/>
+        Model: {{ job.tv_model or '-' }}<br/>
+        Pickup: {{ job.pickup_date or '-' }}<br/>
+        Status: {{ job.status or '-' }}
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th>Description</th><th class="right">Amount (₹)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ job.repair_work or 'Repair services' }}</td>
+          <td class="right">{{ "%.2f"|format(job.amount_charged or 0) }}</td>
+        </tr>
+
+        <tr>
+          <td>Amount Paid</td>
+          <td class="right">{{ "%.2f"|format(total_paid) }}</td>
+        </tr>
+
+        <tr>
+          <td class="total">Remaining Due</td>
+          <td class="right total">{{ "%.2f"|format(remaining) }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:14px">
+      <strong>Notes</strong><br/>
+      <div class="muted">{{ job.note or '-' }}</div>
+    </div>
+
+    <div style="margin-top:18px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;">
+      <div class="muted">Thank you for your business.</div>
+      <div>
+        <a class="btn" href="{{ url_for('invoice_pdf', job_id=job.id) }}">Download PDF</a>
+        <a class="btn" href="#" onclick="window.print();return false;">Print</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
