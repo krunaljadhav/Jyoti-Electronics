@@ -1,0 +1,325 @@
+/* =========================================
+   SUPER MODERN PREMIUM THEME
+   Jyoti Electronics – Beautiful Version
+========================================= */
+
+/* GLOBAL PAGE */
+body {
+    background: linear-gradient(180deg, #e9eefd, #f7f9ff);
+    font-family: "Inter", "Poppins", sans-serif;
+    color: #1b1b1f;
+    padding: 18px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: linear-gradient(90deg, #3b82f6, #6d28d9) !important;
+    padding: 14px 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #fff !important;
+}
+
+/* NAV RIGHT BUTTONS */
+.navbar .btn-outline-secondary {
+    border-color: #ffffffaa !important;
+    color: #fff !important;
+}
+.navbar .btn-outline-secondary:hover {
+    background: #ffffff33 !important;
+}
+
+/* ROW TITLES */
+h3, h4, h2 {
+    font-weight: 700;
+    color: #222;
+}
+
+/* FORM LABELS */
+.form-label {
+    font-weight: 600;
+    color: #374151;
+}
+
+/* FORM INPUTS */
+.form-control,
+.form-select {
+    border-radius: 10px !important;
+    border: 1px solid #cdd7e5 !important;
+    background: #fff;
+    padding: 11px 14px !important;
+    transition: .2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 .15rem rgba(59,130,246,.3);
+}
+
+/* CARD DESIGN */
+.card, .exp-card {
+    border: none;
+    border-radius: 16px;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 8px 30px rgba(13,38,74,0.08);
+    transition: .25s ease;
+}
+
+.card:hover, .exp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(13,38,74,0.12);
+}
+
+/* BUTTONS */
+.btn-primary {
+    background: linear-gradient(90deg, #2563eb, #7c3aed) !important;
+    border: none !important;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #fff;
+    transition: .25s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #1d4ed8, #6d28d9) !important;
+}
+
+.btn-outline-secondary {
+    border-radius: 10px !important;
+}
+
+/* LIST ITEMS */
+.list-group-item {
+    border-radius: 12px !important;
+    background: #ffffff;
+    border: 1px solid #dbe3f3 !important;
+    padding: 14px 20px !important;
+    transition: .25s ease;
+}
+
+.list-group-item:hover {
+    background: #eef4ff !important;
+    transform: scale(1.02);
+}
+
+/* TABLE */
+.table, .exp-table {
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.table thead, .exp-table thead {
+    background: linear-gradient(90deg, #3b82f6, #6d28d9);
+    color: #fff;
+}
+
+.table th, .exp-table th {
+    font-weight: 600;
+}
+
+.table td, .exp-table td {
+    padding: 12px;
+}
+
+/* PROFIT / EXPENSE COLORS */
+.text-profit {
+    color: #059669 !important;
+    font-weight: 600;
+}
+.text-expense {
+    color: #dc2626 !important;
+    font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+    color: #6b7280;
+    margin-top: 40px;
+    padding-bottom: 10px;
+}
+
+/* SMOOTH HOVER */
+* {
+    transition: all .15s ease;
+}
+
+/* =========================
+   Expenses page specific
+   ========================= */
+
+.exp-table th {
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.exp-table td {
+    padding: 12px 14px;
+    color: #333;
+}
+
+/* Table row hover subtle */
+.exp-table tr:hover {
+    background: #fafcff;
+}
+
+/* Buttons used on expenses page */
+.btn-main {
+    background: linear-gradient(90deg, #5b47ff, #6d28d9);
+    color: white !important;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn-main:hover {
+    background: linear-gradient(90deg, #472df0, #5b47ff);
+}
+
+.btn-delete {
+    background: #ff4b4b;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn-delete:hover {
+    background: #d93636;
+}
+
+/* Filter box */
+.filter-box {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.filter-box input[type="date"], .filter-box input[type="text"] {
+    border-radius: 8px;
+    border: 1px solid #d1d9ea;
+    padding: 8px 10px;
+    background: #fff;
+}
+.filter-box button {
+    padding: 8px 12px;
+    background: linear-gradient(90deg, #6b57ff, #7c3aed);
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+.filter-box a {
+    margin-left: 6px;
+    text-decoration: none;
+    color: #4b6cff;
+}
+.filter-box a:hover {
+    text-decoration: underline;
+}
+
+/* Total Row styling */
+.total-row {
+    background: #f5f6ff;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* Small helpers */
+.text-end { text-align: right; }
+.text-center { text-align: center; }
+
+/* =========================
+   Responsive adjustments
+   ========================= */
+
+@media (max-width: 767.98px) {
+  body {
+    padding: 12px;
+  }
+
+  /* Card padding & radius adjustments */
+  .exp-card, .card {
+    padding: 12px !important;
+    border-radius: 12px;
+  }
+
+  /* Make filter controls stack vertically */
+  .filter-box, .filter-box form {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .filter-box label, .filter-box input[type="date"], .filter-box button {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  /* Table responsiveness: make it horizontally scrollable */
+  .exp-table, .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .exp-table th, .exp-table td {
+    padding: 10px 8px !important;
+    white-space: nowrap;
+  }
+
+  /* Buttons full width stack */
+  .btn-main, .btn-delete, .btn-primary, .btn-outline-secondary {
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: 8px;
+  }
+
+  /* Job detail adjustments - stack buttons */
+  .card-body .d-flex, .d-flex.gap-2 {
+    flex-direction: column !important;
+    gap: 8px;
+  }
+
+  .card .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Make invoice buttons easier to tap */
+  a.btn-outline-info, a.btn-outline-success, a.btn-outline-dark {
+    padding: 10px 12px !important;
+    font-size: 15px;
+    display: block;
+    width: 100%;
+  }
+
+  /* New expense form inputs stretch */
+  form input[type="text"], form input[type="number"], form input[type="date"], form select, .filter-box input[type="date"] {
+    width: 100% !important;
+  }
+
+  /* Reduce header size on small screens */
+  h2, h4 { font-size: 1.05rem; }
+
+  /* Slightly larger tap targets */
+  button, input[type="submit"], a.btn-main {
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .exp-card { padding: 14px; }
+  .exp-table th, .exp-table td { padding: 10px; }
+}
+
+/* End of stylesheet */
